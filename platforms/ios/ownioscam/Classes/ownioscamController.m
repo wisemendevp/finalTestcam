@@ -2,30 +2,30 @@
 #import "ownioscamController.h"
 
 @implementation ownioscamController
+@synthesize Toolbarevent;
+@synthesize flashproperty;
+@synthesize Autoproperty;
+@synthesize Onproperty;
+@synthesize Offproperty;
+
 
 // Entry point method
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Instantiate the UIImagePickerController instance
-        self.picker = [[UIImagePickerController alloc] init];
+              self.picker = [[UIImagePickerController alloc] init];
         
-        // Configure the UIImagePickerController instance
-        self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
-        self.picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-        self.picker.showsCameraControls = NO;
-       // self.picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOn;
+      
+       self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+       self.picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
+    self.picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+       self.picker.showsCameraControls = NO;
+              self.picker.delegate = self;
+         self.picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
         
-        // Make us the delegate for the UIImagePickerController
-        self.picker.delegate = self;
-         self.picker.modalPresentationStyle = UIModalPresentationCustom;
-     //   self.overlay = [[ownioscamController alloc] init @"ownioscam" bundle:nil]
-                        
-        // Set the frames to be full screen
         CGRect screenFrame = [[UIScreen mainScreen] bounds];
         self.view.frame = screenFrame;
-        self.picker.view.frame = screenFrame;
+       self.picker.view.frame = screenFrame;
         
         // Set this VC's view as the overlay view for the UIImagePickerController
         self.picker.cameraOverlayView = self.view;
@@ -148,4 +148,25 @@
     }
 }
 
+- (IBAction)flashevent:(id)sender {
+    [Toolbarevent setItems:[[NSArray alloc]initWithObjects:flashproperty,Autoproperty,Onproperty,Offproperty, nil]];
+    
+}
+- (IBAction)flasheventfire:(id)sender
+{
+    [Toolbarevent setItems:[[NSArray alloc]initWithObjects:flashproperty,Autoproperty,Onproperty,Offproperty, nil]];
+}
+- (IBAction)Autoeventfire:(id)sender {
+     [Toolbarevent setItems:[[NSArray alloc]initWithObjects:flashproperty,Autoproperty,nil,nil, nil]];
+    self.picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeAuto;
+}
+- (IBAction)OneventFire:(id)sender {
+     [Toolbarevent setItems:[[NSArray alloc]initWithObjects:flashproperty,Onproperty,nil,nil, nil]];
+    self.picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOn;
+
+}
+- (IBAction)Offeventfire:(id)sender {
+     [Toolbarevent setItems:[[NSArray alloc]initWithObjects:flashproperty,Offproperty,nil,nil, nil]];
+    self.picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
+}
 @end

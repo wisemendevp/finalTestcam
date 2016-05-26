@@ -7,7 +7,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ownioscamController">
             <connections>
+                <outlet property="Autoproperty" destination="6zq-YV-vIJ" id="Mmo-GJ-PPd"/>
                 <outlet property="ImageView" destination="OCF-PJ-knf" id="aEb-KZ-shV"/>
+                <outlet property="Offproperty" destination="gIs-pq-WDd" id="JRo-bm-OQA"/>
+                <outlet property="Onproperty" destination="c7H-Ie-lQx" id="JAW-l5-6wI"/>
+                <outlet property="Toolbarevent" destination="gID-tX-QfQ" id="jxm-K9-YbG"/>
+                <outlet property="flashprop" destination="69b-UD-So6" id="d8e-gA-ZIg"/>
+                <outlet property="flashproperty" destination="v7N-4i-745" id="fl3-G1-G2w"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -35,7 +41,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="GYd-Yj-T0A"/>
                         <barButtonItem style="plain" id="tH7-4D-d3j">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="k6j-uQ-86q">
-                                <rect key="frame" x="197" y="3" width="60" height="60"/>
+                                <rect key="frame" x="270" y="3" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96470588235294119" green="0.98431372549019602" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -54,14 +60,6 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="9dz-dE-M8O"/>
-                        <barButtonItem style="plain" id="Qkq-fb-kzF">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sJz-3p-zHG">
-                                <rect key="frame" x="371" y="18" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="sdF-Df-8g0"/>
                         <barButtonItem style="plain" id="MIh-0C-5U7">
                             <view key="customView" contentMode="scaleToFill" id="IeO-ep-DYO">
                                 <rect key="frame" x="530" y="9" width="50" height="48"/>
@@ -77,25 +75,86 @@
                     </items>
                     <color key="barTintColor" red="0.035294119268655777" green="0.074509806931018829" blue="0.086274512112140656" alpha="1" colorSpace="deviceRGB"/>
                 </toolbar>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gID-tX-QfQ">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <items>
+                        <barButtonItem style="plain" id="v7N-4i-745">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="69b-UD-So6">
+                                <rect key="frame" x="20" y="2" width="24" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Flash.png"/>
+                                <connections>
+                                    <action selector="flashevent:" destination="-1" eventType="touchUpInside" id="XVs-Bk-5x6"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="flasheventfire:" destination="-1" id="9od-5q-to5"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" id="6zq-YV-vIJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8B2-WX-fJ6">
+                                <rect key="frame" x="54" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Auto"/>
+                            </button>
+                            <connections>
+                                <action selector="Autoeventfire:" destination="-1" id="YBS-iT-uF2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" id="c7H-Ie-lQx">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4wK-XX-Ihe">
+                                <rect key="frame" x="110" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="On"/>
+                            </button>
+                            <connections>
+                                <action selector="OneventFire:" destination="-1" id="8WJ-QT-NMT"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" id="gIs-pq-WDd">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="SDw-hg-jfk">
+                                <rect key="frame" x="166" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Off"/>
+                            </button>
+                            <connections>
+                                <action selector="Offeventfire:" destination="-1" id="yyg-oG-46M"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBV-Hh-95m">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="535"/>
+                    <rect key="frame" x="0.0" y="44" width="600" height="491"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="XBV-Hh-95m" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="26k-uX-eCI"/>
+                <constraint firstItem="XBV-Hh-95m" firstAttribute="top" secondItem="gID-tX-QfQ" secondAttribute="bottom" id="5ft-vo-ZSH"/>
                 <constraint firstAttribute="bottom" secondItem="QGb-zx-UAK" secondAttribute="bottom" id="CLc-yy-w3n"/>
+                <constraint firstAttribute="trailing" secondItem="gID-tX-QfQ" secondAttribute="trailing" id="CbW-3s-Hxf"/>
                 <constraint firstAttribute="trailing" secondItem="QGb-zx-UAK" secondAttribute="trailing" id="D5O-PZ-y8K"/>
-                <constraint firstItem="XBV-Hh-95m" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="IRD-6d-MQY"/>
+                <constraint firstItem="XBV-Hh-95m" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="D6G-gj-8at"/>
+                <constraint firstItem="XBV-Hh-95m" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="44" id="IRD-6d-MQY"/>
                 <constraint firstAttribute="trailing" secondItem="XBV-Hh-95m" secondAttribute="trailing" id="MBb-bC-vqY"/>
+                <constraint firstItem="QGb-zx-UAK" firstAttribute="top" secondItem="XBV-Hh-95m" secondAttribute="bottom" id="Miz-vm-KLU"/>
+                <constraint firstAttribute="trailing" secondItem="XBV-Hh-95m" secondAttribute="trailing" id="U4h-3H-l7K"/>
+                <constraint firstItem="gID-tX-QfQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="UKV-n8-phf"/>
+                <constraint firstItem="QGb-zx-UAK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XxY-rW-411"/>
+                <constraint firstAttribute="bottom" secondItem="QGb-zx-UAK" secondAttribute="bottom" id="aTs-sE-nmf"/>
+                <constraint firstAttribute="trailing" secondItem="QGb-zx-UAK" secondAttribute="trailing" id="cg9-TK-SB7"/>
                 <constraint firstAttribute="bottom" secondItem="QGb-zx-UAK" secondAttribute="bottom" id="hRP-2Y-2mt"/>
                 <constraint firstItem="QGb-zx-UAK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="huz-AN-H8t"/>
                 <constraint firstItem="QGb-zx-UAK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nzN-Tu-afi"/>
                 <constraint firstAttribute="trailing" secondItem="QGb-zx-UAK" secondAttribute="trailing" id="qjJ-iZ-Ln2"/>
+                <constraint firstItem="gID-tX-QfQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="uPO-xP-UgC"/>
                 <constraint firstItem="QGb-zx-UAK" firstAttribute="top" secondItem="XBV-Hh-95m" secondAttribute="bottom" id="zUy-EB-aXs"/>
             </constraints>
-            <point key="canvasLocation" x="339" y="506"/>
+            <point key="canvasLocation" x="36" y="175"/>
         </view>
     </objects>
+    <resources>
+        <image name="Flash.png" width="24" height="40"/>
+    </resources>
 </document>

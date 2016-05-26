@@ -14,6 +14,7 @@
     // Make the overlay view controller.
     self.overlay = [[ownioscamController alloc] initWithNibName:@"ownioscamController" bundle:nil];
     self.overlay.plugin = self;
+  // self.overlay.picker.wantsFullScreenLayout = YES;
     
     // Display the view.  This will "slide up" a modal view from the bottom of the screen.
     [self.viewController presentViewController:self.overlay.picker animated:YES completion:nil];
